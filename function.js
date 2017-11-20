@@ -17,12 +17,37 @@ $(document).ready( function(){
 		}
 	)
 
+	//cleaning the previous hadouken animation
+	$('#ryu img').mousedown(
+		function(){
+			$('.demo-hadouken').remove();
+		}
+	)
+
 	// adding hadouken image in the same div as ryu
 	$('#ryu img').mousedown(
 		function(){
 			$('#ryu').append(
 				'<img class="demo-hadouken" src="http://i.imgur.com/oTyQRvX.gif">'
 			)
+		}
+	)
+
+
+	//Adding the animation of hadouken
+	$('#ryu img').mousedown(
+		function(){
+			$('.demo-hadouken').animate({
+				"margin-left": "600px"
+			}, 1000, 'swing', function(){
+				this.remove();
+		})
+	})
+
+	// setting ryu out of hadouken pose
+	$('#ryu img').mouseup(
+		function(){
+			this.src = 'http://i.imgur.com/90Mmdcm.png'
 		}
 	)
 });
