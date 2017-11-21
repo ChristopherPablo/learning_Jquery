@@ -1,3 +1,4 @@
+// getting the size of the screen
 
 $(document).ready( function(){
 	// adding the moviment of Ryu when the mouse is over him, witha gif.
@@ -37,11 +38,16 @@ $(document).ready( function(){
 	//Adding the animation of hadouken
 	$('#ryu img').mousedown(
 		function(){
+			var widthScreen = $('#ryu').width();
+			widthScreen = widthScreen/2;
+			if(widthScreen> 600){widthScreen = 600}
+			else{widthScreen = widthScreen -52}
 			$('.demo-hadouken').animate({
-				"margin-left": "600px"
+				"margin-left": widthScreen
 			}, 1000, 'swing', function(){
 				this.remove();
 		})
+
 	})
 
 	// setting ryu out of hadouken pose
