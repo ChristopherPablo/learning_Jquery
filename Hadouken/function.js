@@ -53,13 +53,13 @@ $(document).ready( function(){
 				widthScreen = -45;
 			}
 			else{
-				$(this).addClass('.min-hadouken');
+				$(this).addClass('min-hadouken');
 				widthScreen = -60;
 			}
 			$('.demo-hadouken').animate({
 				"margin-left": widthScreen
 			}, 1000, 'swing', function(){
-				//this.remove();
+				this.remove();
 		})
 
 	})
