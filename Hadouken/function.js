@@ -41,25 +41,25 @@ $(document).ready( function(){
 			var widthScreen = $('#ryu').width();
 
 			if(widthScreen>= 600){
-				widthScreen = 600;
+				widthScreen = (widthScreen/2) - 52;
 			}
 			else if(widthScreen < 600 && widthScreen >= 340){
-				widthScreen = (widthScreen/2) - 52;
+				widthScreen = (widthScreen/2) - 72;
 			}
 			else if(widthScreen < 340 && widthScreen >= 328){
 				widthScreen = (widthScreen/3) - 55;
 			}
-			else if(widthScreen < 328 && widthScreen >  220){
+			else if(widthScreen < 328 && widthScreen >  250){
 				widthScreen = -45;
 			}
 			else{
-				$('.demo-hadouken')
+				$(this).addClass('.min-hadouken');
 				widthScreen = -60;
 			}
 			$('.demo-hadouken').animate({
 				"margin-left": widthScreen
 			}, 1000, 'swing', function(){
-				this.remove();
+				//this.remove();
 		})
 
 	})
